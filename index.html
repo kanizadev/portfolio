@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaniza Portfolio</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+
+<body>
+    <canvas id="matrix"></canvas>
+
+    <header>
+        <nav>
+            <h1>kanizadev</h1>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <ul id="navLinks">
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="intro">
+            <h2>I'm <span class="glow">Kaniza</span></h2>
+            <p>App and website developer crafting calm digital journeys.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>about me</h2>
+        <div class="about-content">
+            <img src="assets/profile.jpg" alt="Profile Picture" />
+            <p><strong>Hi there! I'm Kaniza.</strong> — a mobile app and website developer, as well as a graphic
+                designer. When I’m not coding, you’ll find me sketching ideas in Figma, creating visuals in Photoshop or
+                Illustrator, or organizing my life in Notion.</p>
+        </div>
+    </section></br>
+
+    <section id="projects">
+        <h2>projects</h2>
+        <div class="project-list">
+            <div class="project">
+                <img src="assets/project1.jpg" alt="Project" />
+                <h3>E-commerce</h3>
+                <p>It is an ecommerce page for coffee shop :) </br>
+                    hope you like it
+
+                </p>
+            </div>
+            <!-- Add more .project items as needed -->
+        </div>
+    </section></br>
+
+    <section id="contact">
+        <h2>contact</h2>
+        <form id="contactForm">
+            <input type="text" name="from_name" placeholder="Name" required />
+            <input type="email" name="from_email" placeholder="Email" required />
+            <textarea name="message" placeholder="Your Message..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="formResponse"></p>
+    </section></br>
+
+    <footer>
+        <p>&copy; 2025 kanizadev &mdash; built with HTML, CSS &amp; JS</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
