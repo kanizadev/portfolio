@@ -9,8 +9,7 @@ Welcome to my personal portfolio repository! 🚀 I build beautiful, intuitive d
 
 This repository contains the source code and assets for my personal portfolio website — a space to showcase my projects, skills, and creative journey as a developer and designer.
 
-👉 **Live Demo:** https://kanizadev.github.io/portfolio (if deployed)
-
+👉 **Live Demo:** https://kanizadev.github.io/portfolio 
 ---
 
 ## 💡 About Me
