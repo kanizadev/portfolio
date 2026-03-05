@@ -74,6 +74,10 @@ header {
     backdrop-filter: blur(20px) saturate(150%);
 }
 
+body > header {
+    margin-bottom: 2.5rem;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -543,6 +547,10 @@ footer {
     font-size: 0.9rem;
     color: var(--text-muted);
     letter-spacing: 0.05em;
+}
+
+body > footer {
+    margin-top: 2.5rem;
 }
 
 
