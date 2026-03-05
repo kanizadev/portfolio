@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kaniza Portfolio</title>
+    <title>Contact – Kaniza</title>
 
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
@@ -22,22 +21,24 @@
             <h1>kanizadev</h1>
             <div class="hamburger" id="hamburger">&#9776;</div>
             <ul id="navLinks">
-                <li><a href="index.html" class="active">home</a></li>
+                <li><a href="index.html">home</a></li>
                 <li><a href="about.html">about</a></li>
                 <li><a href="projects.html">projects</a></li>
-                <li><a href="contact.html">contact</a></li>
+                <li><a href="contact.html" class="active">contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <div class="intro">
-            <h2>I'm <span class="glow">Kaniza</span></h2>
-            <p>App and website developer crafting calm digital journeys.</p>
-        </div>
+    <section id="contact">
+        <h2>contact</h2>
+        <form id="contactForm">
+            <input type="text" name="from_name" placeholder="Name" required />
+            <input type="email" name="from_email" placeholder="Email" required />
+            <textarea name="message" placeholder="Your Message..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="formResponse"></p>
     </section>
-
-    <!-- Home page now only shows hero. Other content moved to about/projects/contact pages. -->
 
     <footer>
         <p>&copy; 2025 kanizadev &mdash; built with HTML, CSS &amp; JS</p>
@@ -47,3 +48,4 @@
 </body>
 
 </html>
+
