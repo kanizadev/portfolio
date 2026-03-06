@@ -1135,7 +1135,8 @@ body > footer {
     }
     .intro:hover,
     .project:hover,
-    form:hover {
+    #about .about-card:hover,
+    .contact-card:hover {
         transform: none;
     }
 
@@ -1151,14 +1152,16 @@ body > footer {
 /* Subtle 3D hover on hero and cards */
 .intro,
 .project,
-form {
+#about .about-card,
+.contact-card {
     transform-style: preserve-3d;
     transform-origin: center;
 }
 
 .intro:hover,
 .project:hover,
-form:hover {
+#about .about-card:hover,
+.contact-card:hover {
     transform: translateY(-8px) rotateX(6deg) rotateY(-4deg);
 }
 

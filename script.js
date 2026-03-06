@@ -94,7 +94,18 @@ if (yearEl) {
         { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
     );
 
-    elements.forEach((el) => io.observe(el));
+    // If an element is already in view on load (like the contact card),
+    // show it immediately to avoid a "jump" feeling.
+    const viewportH = window.innerHeight || 0;
+    elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const inView = rect.top < viewportH * 0.9 && rect.bottom > 0;
+        if (inView) {
+            el.classList.add("is-visible");
+            return;
+        }
+        io.observe(el);
+    });
 })();
 
 // Profile photo parallax tilt (desktop only)
