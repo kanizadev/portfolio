@@ -362,11 +362,25 @@ section h2::after {
     box-shadow: 0 12px 32px rgba(12, 20, 15, 0.4);
     background: rgba(0, 0, 0, 0.12);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: floaty 6s ease-in-out infinite;
+    will-change: transform;
 }
 
 .about-photo img:hover {
-    transform: translateY(-4px) scale(1.02);
+    animation-play-state: paused;
+    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 16px 40px rgba(163, 177, 138, 0.3);
+}
+
+@keyframes floaty {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .about-text {
