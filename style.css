@@ -1165,7 +1165,7 @@ form:hover {
 /* Responsive: tablet and below */
 @media (max-width: 768px) {
     nav ul {
-        display: none;
+        display: flex;
         flex-direction: column;
         background: var(--bg-alt);
         position: absolute;
@@ -1174,10 +1174,33 @@ form:hover {
         width: 100%;
         padding: 0.5rem 0;
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+        border-top: 1px solid rgba(203, 213, 186, 0.18);
+        backdrop-filter: blur(16px) saturate(150%);
+        transition:
+            max-height 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            opacity 200ms ease,
+            transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            visibility 0s linear 280ms;
     }
 
     nav ul.show {
-        display: flex;
+        max-height: 420px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+        transition:
+            max-height 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            opacity 220ms ease,
+            transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            visibility 0s linear 0s;
     }
 
     nav ul li {
