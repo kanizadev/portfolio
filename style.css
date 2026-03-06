@@ -11,7 +11,9 @@
     --card: rgba(10, 18, 12, 0.32);
     --shadow: 0 26px 70px rgba(2, 8, 4, 0.85);
     --section-padding: clamp(1.5rem, 5vw, 4.5rem);
-    --section-padding-x: clamp(1rem, 4vw, 3rem);
+    --section-padding-x: clamp(1.25rem, 4vw, 3rem);
+    --gutter-left: max(var(--section-padding-x), env(safe-area-inset-left));
+    --gutter-right: max(var(--section-padding-x), env(safe-area-inset-right));
     --touch-min: 44px;
 }
 
@@ -85,7 +87,7 @@ body::after {
 /* Header & Nav */
 header {
     background: linear-gradient(120deg, rgba(6, 13, 8, 0.8), rgba(14, 24, 17, 0.55));
-    padding: max(1rem, env(safe-area-inset-top)) max(var(--section-padding-x), env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(var(--section-padding-x), env(safe-area-inset-left));
+    padding: max(1rem, env(safe-area-inset-top)) var(--gutter-right) max(1rem, env(safe-area-inset-bottom)) var(--gutter-left);
     position: sticky;
     top: 0;
     z-index: 999;
@@ -193,7 +195,10 @@ nav ul li a:focus-visible {
 
 /* Sections */
 section {
-    padding: var(--section-padding) var(--section-padding-x);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    padding-left: var(--gutter-left);
+    padding-right: var(--gutter-right);
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
@@ -210,7 +215,10 @@ section:not(#home) {
     border: 1px solid rgba(203, 213, 186, 0.45);
     box-shadow: var(--shadow);
     backdrop-filter: blur(26px) saturate(150%);
-    padding: var(--section-padding) var(--section-padding-x);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    padding-left: var(--gutter-left);
+    padding-right: var(--gutter-right);
     overflow: hidden;
     animation: fadeUp 0.9s ease both;
 }
@@ -865,7 +873,7 @@ form button:active {
 /* Footer */
 footer {
     text-align: left;
-    padding: clamp(1.25rem, 4vw, 2rem) var(--section-padding-x);
+    padding: clamp(1.25rem, 4vw, 2rem) var(--gutter-right) clamp(1.25rem, 4vw, 2rem) var(--gutter-left);
     padding-bottom: max(clamp(1.25rem, 4vw, 2rem), env(safe-area-inset-bottom));
     background: linear-gradient(135deg, rgba(8, 15, 10, 0.78), rgba(10, 20, 13, 0.9));
     border-top: 1px solid rgba(203, 213, 186, 0.32);
