@@ -271,51 +271,137 @@ section h2::after {
 }
 
 /* About */
+#about .about-card {
+    background:
+        radial-gradient(circle at top left, rgba(163, 177, 138, 0.14), transparent 55%) border-box,
+        linear-gradient(145deg, rgba(6, 14, 9, 0.78), rgba(12, 22, 15, 0.95)) padding-box;
+    border: 1px solid rgba(203, 213, 186, 0.4);
+    border-radius: 22px;
+    padding: 2.5rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(24px) saturate(150%);
+}
+
 .about-content {
     display: flex;
     gap: 2.5rem;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
-.about-content img {
+.about-photo {
+    flex-shrink: 0;
+}
+
+.about-photo img {
     width: 200px;
-    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
     border: 2px solid var(--accent);
-    box-shadow: 0 12px 32px rgba(12, 20, 15, 0.35);
+    box-shadow: 0 12px 32px rgba(12, 20, 15, 0.4);
     background: rgba(0, 0, 0, 0.12);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-
 }
 
-.about-content img:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 16px 38px rgba(163, 177, 138, 0.35);
-}
-
-.about-content p {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-    letter-spacing: 0.02em;
-}
-
-.about-content p strong {
-    color: var(--text);
+.about-photo img:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(163, 177, 138, 0.3);
 }
 
 .about-text {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
+}
+
+.about-lead,
+.about-content p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+}
+
+.about-lead strong,
+.about-content p strong {
+    color: var(--text);
 }
 
 .about-actions {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
     align-items: flex-start;
+}
+
+.btn-resume {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(207, 218, 193, 0.98), rgba(163, 177, 138, 0.98));
+    color: var(--accent-contrast);
+    border: 1px solid rgba(207, 218, 193, 0.8);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    margin-bottom: 0.25rem;
+}
+
+.btn-resume:hover {
+    background: linear-gradient(135deg, rgba(220, 228, 208, 0.98), rgba(180, 192, 155, 0.98));
+    box-shadow: 0 12px 32px rgba(163, 177, 138, 0.35);
+}
+
+.btn-resume:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(163, 177, 138, 0.4);
+}
+
+.social-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(203, 213, 186, 0.45);
+    background: linear-gradient(145deg, rgba(6, 13, 8, 0.82), rgba(12, 22, 15, 0.96));
+    color: var(--text-muted);
+    transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.social-icon:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(163, 177, 138, 0.25);
+}
+
+.social-icon:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(163, 177, 138, 0.2);
 }
 
 /* Projects */
@@ -681,8 +767,32 @@ form:hover {
         padding: 2rem 1.5rem;
     }
 
+    #about .about-card {
+        padding: 1.75rem;
+        border-radius: 18px;
+    }
+
     .about-content {
         flex-direction: column;
+        align-items: center;
+        gap: 1.75rem;
+    }
+
+    .about-photo img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-actions {
+        align-items: center;
+    }
+
+    .social-label {
+        margin-top: 0.25rem;
     }
 
 }
