@@ -2,9 +2,69 @@
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-});
+if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("show");
+        hamburger.setAttribute("aria-expanded", isOpen);
+        hamburger.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    });
+}
+
+// Footer year
+const yearEl = document.getElementById("year");
+if (yearEl) {
+    yearEl.textContent = String(new Date().getFullYear());
+}
+
+// Scroll reveal animations
+(() => {
+    const candidates = [
+        ".intro",
+        "section h2",
+        "#about .about-card",
+        "#contact .contact-card",
+        ".project",
+        ".site-footer .footer-inner > *",
+        ".site-footer .footer-bottom",
+    ];
+
+    const elements = document.querySelectorAll(candidates.join(","));
+    if (!elements.length) return;
+
+    // Add base reveal class and optional staggering
+    elements.forEach((el) => {
+        el.classList.add("reveal");
+        if (el.matches(".intro, #about .about-card, #contact .contact-card")) {
+            el.classList.add("reveal-scale");
+        }
+    });
+
+    const projectCards = document.querySelectorAll(".project-list .project");
+    projectCards.forEach((card, idx) => {
+        card.style.setProperty("--reveal-delay", `${Math.min(idx * 70, 420)}ms`);
+    });
+
+    const prefersReduced =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+        elements.forEach((el) => el.classList.add("is-visible"));
+        return;
+    }
+
+    const io = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+            });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    elements.forEach((el) => io.observe(el));
+})();
 
 // EmailJS integration for contact form (only on pages that have it)
 if (typeof emailjs !== "undefined") {
