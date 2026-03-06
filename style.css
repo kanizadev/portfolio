@@ -233,6 +233,7 @@ section:not(#home)::before {
 }
 
 .intro {
+    position: relative;
     text-align: center;
     margin-top: 2rem;
     max-width: 620px;
@@ -330,6 +331,7 @@ section h2::after {
 
 /* About */
 #about .about-card {
+    position: relative;
     background:
         radial-gradient(circle at top left, rgba(163, 177, 138, 0.14), transparent 55%) border-box,
         linear-gradient(145deg, rgba(6, 14, 9, 0.78), rgba(12, 22, 15, 0.95)) padding-box;
@@ -625,6 +627,7 @@ section h2::after {
 
 /* Contact */
 .contact-card {
+    position: relative;
     background:
         radial-gradient(circle at top left, rgba(163, 177, 138, 0.14), transparent 55%) border-box,
         linear-gradient(145deg, rgba(6, 14, 9, 0.78), rgba(12, 22, 15, 0.95)) padding-box;
@@ -920,22 +923,41 @@ body > footer {
     color: var(--text-muted);
 }
 
+.site-footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.site-footer .footer-links h4 {
+    flex: 0 0 100%;
+}
+
 .site-footer .footer-links a {
     display: inline-flex;
     align-items: center;
     width: fit-content;
     color: var(--text-muted);
     text-decoration: none;
-    padding: 0.3rem 0;
-    letter-spacing: 0.06em;
+    padding: 0.4rem 0.75rem;
+    min-height: 38px;
+    border-radius: 999px;
+    border: 1px solid rgba(203, 213, 186, 0.35);
+    background: rgba(6, 14, 9, 0.45);
+    letter-spacing: 0.14em;
     text-transform: lowercase;
-    transition: color 0.25s ease, transform 0.25s ease;
+    font-size: 0.72rem;
+    transition: color 0.25s ease, transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .site-footer .footer-links a:hover,
 .site-footer .footer-links a:focus-visible {
     color: var(--accent);
-    transform: translateX(2px);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(163, 177, 138, 0.18);
     outline: none;
 }
 
@@ -1045,6 +1067,10 @@ body > footer {
     .project:hover,
     form:hover {
         transform: none;
+    }
+
+    .site-footer .footer-links a {
+        min-height: var(--touch-min);
     }
 }
 
@@ -1227,6 +1253,19 @@ form:hover {
 @media (max-width: 768px) {
     .site-footer .footer-inner {
         grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .site-footer {
+        text-align: center;
+    }
+
+    .site-footer .footer-links {
+        justify-content: center;
+    }
+
+    .site-footer .footer-social .social-links {
+        justify-content: center;
     }
 
     .site-footer .footer-bottom {
