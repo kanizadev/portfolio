@@ -87,6 +87,54 @@ if (yearEl) {
     elements.forEach((el) => io.observe(el));
 })();
 
+// Profile photo parallax tilt (desktop only)
+(() => {
+    const photo = document.querySelector(".about-photo");
+    if (!photo) return;
+
+    const prefersReduced =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isCoarse =
+        window.matchMedia &&
+        window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    if (prefersReduced || isCoarse) return;
+
+    function clamp(n, min, max) {
+        return Math.max(min, Math.min(max, n));
+    }
+
+    function setNeutral() {
+        photo.style.setProperty("--rx", "0deg");
+        photo.style.setProperty("--ry", "0deg");
+        photo.style.setProperty("--mx", "50%");
+        photo.style.setProperty("--my", "40%");
+    }
+
+    setNeutral();
+
+    photo.addEventListener("pointermove", (e) => {
+        const rect = photo.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+
+        const dx = clamp(x * 2 - 1, -1, 1);
+        const dy = clamp(y * 2 - 1, -1, 1);
+
+        const rx = (-dy * 8).toFixed(2);
+        const ry = (dx * 10).toFixed(2);
+
+        photo.style.setProperty("--rx", `${rx}deg`);
+        photo.style.setProperty("--ry", `${ry}deg`);
+        photo.style.setProperty("--mx", `${(x * 100).toFixed(1)}%`);
+        photo.style.setProperty("--my", `${(y * 100).toFixed(1)}%`);
+    });
+
+    photo.addEventListener("pointerleave", () => {
+        setNeutral();
+    });
+})();
+
 // EmailJS integration for contact form (only on pages that have it)
 if (typeof emailjs !== "undefined") {
     (function () {

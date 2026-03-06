@@ -351,9 +351,37 @@ section h2::after {
 
 .about-photo {
     flex-shrink: 0;
+    position: relative;
+    perspective: 900px;
+    --rx: 0deg;
+    --ry: 0deg;
+    --mx: 50%;
+    --my: 40%;
+    transform: rotateX(var(--rx)) rotateY(var(--ry));
+    transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform;
+}
+
+.about-photo::before {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    background:
+        radial-gradient(circle at var(--mx) var(--my), rgba(163, 177, 138, 0.22), transparent 55%);
+    filter: blur(10px);
+    opacity: 0.75;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 250ms ease;
+}
+
+.about-photo:hover::before {
+    opacity: 1;
 }
 
 .about-photo img {
+    position: relative;
+    z-index: 1;
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -362,7 +390,8 @@ section h2::after {
     box-shadow: 0 12px 32px rgba(12, 20, 15, 0.4);
     background: rgba(0, 0, 0, 0.12);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    animation: floaty 6s ease-in-out infinite;
+    transform: translateZ(0);
+    animation: floaty 6.5s ease-in-out infinite;
     will-change: transform;
 }
 
@@ -375,11 +404,11 @@ section h2::after {
 @keyframes floaty {
     0%,
     100% {
-        transform: translateY(0);
+        transform: translateY(0) rotateZ(-0.35deg);
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-12px) rotateZ(0.55deg);
     }
 }
 
@@ -1085,6 +1114,10 @@ body > footer {
 
     .site-footer .footer-links a {
         min-height: var(--touch-min);
+    }
+
+    .about-photo {
+        transform: none !important;
     }
 }
 
