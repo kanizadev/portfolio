@@ -49,6 +49,13 @@ body {
     word-wrap: break-word;
 }
 
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
 a {
     color: inherit;
 }
@@ -1067,10 +1074,11 @@ body > footer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     pointer-events: none;
+    display: block;
 }
 
 /* Custom cursor */
@@ -1322,5 +1330,34 @@ form:hover {
 
     .site-footer .footer-brand p {
         max-width: none;
+    }
+}
+
+/* Responsive: tablets (avoid cramped 3-column footer) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .site-footer .footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .site-footer .footer-social {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Responsive: very small phones */
+@media (max-width: 360px) {
+    nav h1 {
+        font-size: 1.15rem;
+        letter-spacing: 0.06em;
+    }
+
+    .btn-chip {
+        padding: 0.55rem 0.9rem;
+        font-size: 0.72rem;
+    }
+
+    .site-footer .back-to-top {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.7rem;
     }
 }
