@@ -29,6 +29,18 @@ if (hamburger && navLinks) {
         hamburger.setAttribute("aria-expanded", "false");
         hamburger.setAttribute("aria-label", "Open menu");
     });
+
+    // Close menu when clicking outside (mobile)
+    document.addEventListener("pointerdown", (e) => {
+        if (!navLinks.classList.contains("show")) return;
+        const target = e.target;
+        if (!(target instanceof Element)) return;
+        const nav = hamburger.closest("nav");
+        if (nav && nav.contains(target)) return;
+        navLinks.classList.remove("show");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Open menu");
+    });
 }
 
 // Footer year
@@ -45,8 +57,6 @@ if (yearEl) {
         "#about .about-card",
         "#contact .contact-card",
         ".project",
-        ".site-footer .footer-inner > *",
-        ".site-footer .footer-bottom",
     ];
 
     const elements = document.querySelectorAll(candidates.join(","));

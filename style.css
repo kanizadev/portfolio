@@ -56,6 +56,25 @@ video {
     height: auto;
 }
 
+.skip-link {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    padding: 0.65rem 1rem;
+    background: rgba(6, 14, 9, 0.92);
+    border: 1px solid rgba(203, 213, 186, 0.45);
+    color: var(--accent-alt);
+    border-radius: 999px;
+    text-decoration: none;
+    transform: translateY(-150%);
+    transition: transform 200ms ease;
+    z-index: 2000;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 a {
     color: inherit;
 }

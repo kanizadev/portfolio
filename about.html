@@ -5,22 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#050806" />
+    <meta name="description" content="About Kaniza — mobile app & website developer and graphic designer. Flutter, web, and calm UI craft." />
     <title>About – Kaniza</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
     <canvas id="matrix"></canvas>
     <div class="cursor-dot"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <header>
         <nav>
             <h1>kanizadev</h1>
-            <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+            <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
             <ul id="navLinks">
                 <li><a href="index.html">home</a></li>
                 <li><a href="about.html" class="active">about</a></li>
@@ -30,14 +33,15 @@
         </nav>
     </header>
 
-    <section id="about">
-        <h2>about me</h2>
-        <div class="about-card">
-            <div class="about-content">
-                <div class="about-photo">
-                    <img src="profile.jpg" alt="Kaniza" />
-                </div>
-                <div class="about-text">
+    <main id="main">
+        <section id="about">
+            <h2>about me</h2>
+            <div class="about-card">
+                <div class="about-content">
+                    <div class="about-photo">
+                        <img src="profile.jpg" alt="Kaniza" />
+                    </div>
+                    <div class="about-text">
                     <p class="about-lead">
                         <strong>Hi there! I'm Kaniza.</strong> — a mobile app and website developer, as well as a graphic
                         designer. When I’m not coding, you’ll find me sketching ideas in Figma, creating visuals in
@@ -62,10 +66,11 @@
                             </a>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-inner">

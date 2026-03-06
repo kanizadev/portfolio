@@ -5,8 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#050806" />
+    <meta name="description" content="Contact Kaniza — send a message for projects, collaborations, or opportunities." />
     <title>Contact – Kaniza</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
@@ -16,11 +19,12 @@
 <body>
     <canvas id="matrix"></canvas>
     <div class="cursor-dot"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <header>
         <nav>
             <h1>kanizadev</h1>
-            <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+            <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
             <ul id="navLinks">
                 <li><a href="index.html">home</a></li>
                 <li><a href="about.html">about</a></li>
@@ -30,26 +34,28 @@
         </nav>
     </header>
 
-    <section id="contact">
-        <h2>contact</h2>
-        <div class="contact-card">
-            <p class="contact-intro">Have a project in mind or want to say hi? Drop me a message and I’ll get back to you.</p>
-            <form id="contactForm" class="contact-form">
-                <div class="form-row">
-                    <label for="contactName" class="sr-only">Name</label>
-                    <input type="text" id="contactName" name="from_name" placeholder="Name" required />
-                    <label for="contactEmail" class="sr-only">Email</label>
-                    <input type="email" id="contactEmail" name="from_email" placeholder="Email" required />
-                </div>
-                <div class="form-group">
-                    <label for="contactMessage" class="sr-only">Message</label>
-                    <textarea id="contactMessage" name="message" placeholder="Your message..." required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Send message</button>
-            </form>
-            <p id="formResponse" class="form-response" aria-live="polite"></p>
-        </div>
-    </section>
+    <main id="main">
+        <section id="contact">
+            <h2>contact</h2>
+            <div class="contact-card">
+                <p class="contact-intro">Have a project in mind or want to say hi? Drop me a message and I’ll get back to you.</p>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <label for="contactName" class="sr-only">Name</label>
+                        <input type="text" id="contactName" name="from_name" placeholder="Name" required />
+                        <label for="contactEmail" class="sr-only">Email</label>
+                        <input type="email" id="contactEmail" name="from_email" placeholder="Email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage" class="sr-only">Message</label>
+                        <textarea id="contactMessage" name="message" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send message</button>
+                </form>
+                <p id="formResponse" class="form-response" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-inner">

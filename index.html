@@ -5,23 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#050806" />
+    <meta name="description" content="Kaniza — mobile app & website developer. Calm, modern digital journeys with Flutter and the web." />
     <title>Kaniza Portfolio</title>
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
     <canvas id="matrix"></canvas>
     <div class="cursor-dot"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <header>
         <nav>
             <h1>kanizadev</h1>
-            <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+            <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
             <ul id="navLinks">
                 <li><a href="index.html" class="active">home</a></li>
                 <li><a href="about.html">about</a></li>
@@ -31,16 +34,18 @@
         </nav>
     </header>
 
-    <section id="home">
-        <div class="intro">
-            <h2>I'm <span class="glow">Kaniza</span></h2>
-            <p>App and website developer crafting calm digital journeys.</p>
-            <div class="hero-actions">
-                <a class="btn-chip code" href="projects.html">view projects ↗</a>
-                <a class="btn-chip demo" href="contact.html">contact me ↗</a>
+    <main id="main">
+        <section id="home">
+            <div class="intro">
+                <h2>I'm <span class="glow">Kaniza</span></h2>
+                <p>App and website developer crafting calm digital journeys.</p>
+                <div class="hero-actions">
+                    <a class="btn-chip code" href="projects.html">view projects ↗</a>
+                    <a class="btn-chip demo" href="contact.html">contact me ↗</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Home page now only shows hero. Other content moved to about/projects/contact pages. -->
 

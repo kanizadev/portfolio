@@ -5,22 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#050806" />
+    <meta name="description" content="Projects by Kaniza — Flutter apps, web experiments, and polished UI builds." />
     <title>Projects – Kaniza</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
     <canvas id="matrix"></canvas>
     <div class="cursor-dot"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <header>
         <nav>
             <h1>kanizadev</h1>
-            <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+            <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
             <ul id="navLinks">
                 <li><a href="index.html">home</a></li>
                 <li><a href="about.html">about</a></li>
@@ -30,9 +33,10 @@
         </nav>
     </header>
 
-    <section id="projects">
-        <h2>projects</h2>
-        <div class="project-list">
+    <main id="main">
+        <section id="projects">
+            <h2>projects</h2>
+            <div class="project-list">
             <div class="project">
                 <h3>Sage Green Calculator</h3>
                 <p>🌿 A focused Flutter calculator app with a calm sage green palette and glassmorphism UI, crafted for distraction‑free everyday use.</p>
@@ -294,8 +298,9 @@
                     <a class="btn-chip code" href="https://github.com/kanizadev/p018" target="_blank" rel="noopener noreferrer">view code ↗</a>
                 </div>
             </div>
-        </div>
-    </section>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-inner">
