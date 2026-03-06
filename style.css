@@ -423,7 +423,6 @@ section h2::after {
 
 .about-photo img:hover {
     animation-play-state: paused;
-    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 16px 40px rgba(163, 177, 138, 0.3);
 }
 
@@ -1135,7 +1134,6 @@ body > footer {
     }
     .intro:hover,
     .project:hover,
-    #about .about-card:hover,
     .contact-card:hover {
         transform: none;
     }
@@ -1152,7 +1150,6 @@ body > footer {
 /* Subtle 3D hover on hero and cards */
 .intro,
 .project,
-#about .about-card,
 .contact-card {
     transform-style: preserve-3d;
     transform-origin: center;
@@ -1160,7 +1157,6 @@ body > footer {
 
 .intro:hover,
 .project:hover,
-#about .about-card:hover,
 .contact-card:hover {
     transform: translateY(-8px) rotateX(6deg) rotateY(-4deg);
 }
