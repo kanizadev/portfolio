@@ -110,6 +110,62 @@ body::after {
     z-index: -1;
 }
 
+body.nfc-mode {
+    background: radial-gradient(circle at 25% 15%, rgba(173, 221, 161, 0.18), transparent 26%),
+                radial-gradient(circle at 80% 10%, rgba(152, 207, 142, 0.14), transparent 28%),
+                linear-gradient(180deg, #071006 0%, #090b08 100%);
+    color: #ecf7e9;
+}
+
+body.nfc-mode::before {
+    filter: blur(1px);
+}
+
+body.nfc-mode::after {
+    opacity: 1;
+    mix-blend-mode: screen;
+    filter: blur(1px);
+}
+
+.nfc-banner {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 2000;
+    max-width: calc(100% - 2rem);
+    padding: 0.95rem 1.15rem;
+    border-radius: 22px;
+    border: 1px solid rgba(188, 232, 178, 0.45);
+    backdrop-filter: blur(16px);
+    background: rgba(16, 35, 18, 0.78);
+    color: #e8f4db;
+    box-shadow: 0 0 0 rgba(163, 177, 138, 0);
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+body.nfc-mode-active .nfc-banner {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 28px rgba(163, 177, 138, 0.34);
+}
+
+@keyframes nfc-pulse {
+    from {
+        box-shadow: 0 0 18px rgba(163, 177, 138, 0.18);
+    }
+    to {
+        box-shadow: 0 0 32px rgba(163, 177, 138, 0.35);
+    }
+}
+
+body.nfc-mode .nfc-banner {
+    animation: nfc-pulse 2.4s ease-in-out infinite alternate;
+}
+
 /* Header & Nav */
 header {
     background: linear-gradient(120deg, rgba(6, 13, 8, 0.8), rgba(14, 24, 17, 0.55));

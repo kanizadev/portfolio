@@ -49,6 +49,27 @@ if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
 }
 
+function isNfcMode() {
+    return new URLSearchParams(window.location.search).get("nfc") === "true";
+}
+
+function initNfcMode() {
+    if (!isNfcMode()) return;
+
+    document.body.classList.add("nfc-mode");
+
+    const banner = document.createElement("div");
+    banner.className = "nfc-banner";
+    banner.textContent = "NFC mode activated 🌿";
+    document.body.prepend(banner);
+
+    requestAnimationFrame(() => {
+        document.body.classList.add("nfc-mode-active");
+    });
+}
+
+initNfcMode();
+
 // Scroll reveal animations
 (() => {
     const candidates = [
