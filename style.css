@@ -25,9 +25,15 @@
 }
 
 html {
+    min-height: 100%;
     scroll-behavior: smooth;
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
+}
+
+main {
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 *::selection {
@@ -698,6 +704,7 @@ section h2::after {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
+    justify-content: space-between;
     margin-top: 1.2rem;
 }
 
@@ -1215,6 +1222,26 @@ body > footer {
 .project:hover,
 .contact-card:hover {
     transform: translateY(-8px) rotateX(6deg) rotateY(-4deg);
+}
+
+/* Responsive: tablets and smaller */
+@media (max-width: 1024px) {
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        padding: 1.5rem;
+    }
+
+    .site-footer .footer-inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .site-footer {
+        text-align: center;
+    }
 }
 
 /* Responsive: tablet and below */
