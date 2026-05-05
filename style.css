@@ -618,7 +618,7 @@ section h2::after {
 
 .project::after,
 #about .about-card::after,
-.contact-card::after,
+.contact-form::after,
 .intro::after {
     content: "";
     position: absolute;
@@ -635,7 +635,7 @@ section h2::after {
 
 .project:hover::after,
 #about .about-card:hover::after,
-.contact-card:hover::after,
+.contact-form:hover::after,
 .intro:hover::after {
     opacity: 0.85;
 }
@@ -757,7 +757,7 @@ section h2::after {
 }
 
 /* Contact */
-.contact-card {
+.contact-form {
     position: relative;
     background:
         radial-gradient(circle at top left, rgba(163, 177, 138, 0.14), transparent 55%) border-box,
@@ -790,6 +790,7 @@ section h2::after {
 }
 
 .contact-form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -1197,7 +1198,7 @@ body > footer {
     }
     .intro:hover,
     .project:hover,
-    .contact-card:hover {
+    .contact-form:hover {
         transform: none;
     }
 
@@ -1213,14 +1214,14 @@ body > footer {
 /* Subtle 3D hover on hero and cards */
 .intro,
 .project,
-.contact-card {
+.contact-form {
     transform-style: preserve-3d;
     transform-origin: center;
 }
 
 .intro:hover,
 .project:hover,
-.contact-card:hover {
+.contact-form:hover {
     transform: translateY(-8px) rotateX(6deg) rotateY(-4deg);
 }
 
@@ -1334,7 +1335,7 @@ body > footer {
         padding: 2rem 1.5rem;
     }
 
-    #contact .contact-card {
+    #contact .contact-form {
         padding: 1.75rem;
         border-radius: 18px;
     }
@@ -1419,7 +1420,7 @@ body > footer {
     }
 
     #about .about-card,
-    #contact .contact-card {
+    .contact-form {
         padding: 1.25rem;
     }
 

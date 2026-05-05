@@ -76,7 +76,7 @@ initNfcMode();
         ".intro",
         "section h2",
         "#about .about-card",
-        "#contact .contact-card",
+        "#contact .contact-form",
         ".project",
     ];
 
@@ -86,7 +86,7 @@ initNfcMode();
     // Add base reveal class and optional staggering
     elements.forEach((el) => {
         el.classList.add("reveal");
-        if (el.matches(".intro, #about .about-card, #contact .contact-card")) {
+        if (el.matches(".intro, #about .about-card, #contact .contact-form")) {
             el.classList.add("reveal-scale");
         }
     });
